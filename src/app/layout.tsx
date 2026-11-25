@@ -7,7 +7,7 @@ import "./tokens.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Studio Mallow — Free Creative Agency Template",
+  title: "hasansekman",
   description: "A small, cheerful design studio making brands, websites and packaging that feel like a lazy Sunday morning.",
   icons: { icon: "/f/fB9ovjuFEKWqS5S6gkOgeQmdTM.png" },
   openGraph: { images: ["/f/VKl5hzGRqpBto84m23rBeGkS6DY.jpg"] },

@@ -12,17 +12,11 @@ import s from "./Team.module.css";
 
 type Social = [label: string, icon: IconName, href: string];
 
-const LINKEDIN: Social = [
-  "LinkedIn",
-  "LinkedinLogo",
-  "https://www.linkedin.com/",
-];
 const INSTAGRAM: Social = [
   "Instagram",
   "InstagramLogo",
-  "https://www.instagram.com/",
+  "https://www.instagram.com/hasansekman",
 ];
-const DRIBBBLE: Social = ["Dribbble", "DribbbleLogo", "https://dribbble.com/"];
 
 const TEAM = [
   {
@@ -31,7 +25,7 @@ const TEAM = [
     line: "Keeps every tram ticket",
     colour: "orange",
     photo: "9ALO5N9Ndbkh7MpY7mlgU4U3o.png",
-    socials: [LINKEDIN, INSTAGRAM],
+    socials: [INSTAGRAM],
   },
   {
     name: "Theo Marsh",
@@ -39,7 +33,7 @@ const TEAM = [
     line: "Owns a stamp that says ‘no’",
     colour: "purple",
     photo: "bmERGwGGl0UIXAlvKahAax0Mu5U.png",
-    socials: [LINKEDIN, DRIBBBLE],
+    socials: [INSTAGRAM],
   },
   {
     name: "Rita Sousa",
@@ -47,7 +41,7 @@ const TEAM = [
     line: "Has labelled the label maker",
     colour: "yellow",
     photo: "gdL9JlVEgd3I8oWFriDNR9lvFy0.png",
-    socials: [LINKEDIN, INSTAGRAM],
+    socials: [INSTAGRAM],
   },
   {
     name: "Pão",

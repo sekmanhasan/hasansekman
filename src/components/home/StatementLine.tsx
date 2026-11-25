@@ -86,7 +86,7 @@ export default function StatementLine() {
                   <div className={s.receipt} data-framer-name="Receipt">
                     <div className={s.shop} data-framer-name="Shop">
                       <p className="t-24b" style={{ textAlign: "center" }}>
-                        Studio Mallow
+                        hasansekman
                       </p>
                       <p className="t-13" style={{ textAlign: "center", color: "var(--muted)" }}>
                         Ground floor, London · since 2019
@@ -100,7 +100,7 @@ export default function StatementLine() {
                     </div>
                     <div className={s.rule} data-framer-name="Rule" />
                     <p className="t-13" style={{ textAlign: "center", color: "var(--muted)" }}>
-                      Mon–Fri, 9 to 6 · hello@studiomallow.co
+                      Mon–Fri, 9 to 6 · hasansekman@outlook.com
                     </p>
                     <div className={s.tear} data-framer-name="Tear">
                       {Array.from({ length: 24 }, (_, i) => (

@@ -20,7 +20,7 @@ export default function BookBoard() {
           </div>
           <p className={`t-14 ${s.note}`}>
             Slots show in your own time zone. Nothing that works? Email
-            hello@studiomallow.co and we’ll find a time.
+            hasansekman@outlook.com and we’ll find a time.
           </p>
         </div>
         <div className={s.notes} data-framer-name="Notes">

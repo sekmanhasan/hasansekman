@@ -289,8 +289,8 @@ export default function ContactBoard() {
             <PinnedNote
               className={`${s.note} ${s.noteWrite}`}
               label="Write to us"
-              value="hello@studiomallow.co"
-              href="mailto:hello@studiomallow.co"
+              value="hasansekman@outlook.com"
+              href="mailto:hasansekman@outlook.com"
               detail="Replies within a day, Monday to Friday."
               fill="yellow"
               pin="orange"
@@ -329,26 +329,8 @@ export default function ContactBoard() {
               <SocialKey
                 label="Instagram"
                 icon="InstagramLogo"
-                href="https://instagram.com"
+                href="https://www.instagram.com/hasansekman"
                 colour="orange"
-              />
-              <SocialKey
-                label="LinkedIn"
-                icon="LinkedinLogo"
-                href="https://linkedin.com"
-                colour="yellow"
-              />
-              <SocialKey
-                label="Dribbble"
-                icon="DribbbleLogo"
-                href="https://dribbble.com"
-                colour="purple"
-              />
-              <SocialKey
-                label="Behance"
-                icon="BehanceLogo"
-                href="https://behance.net"
-                colour="pink"
               />
             </div>
             <PinnedNote

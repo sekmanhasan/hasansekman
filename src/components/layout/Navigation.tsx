@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -54,8 +53,8 @@ export default function Navigation() {
         data-framer-name="Pill"
       >
         <div className={styles.container}>
-          <Link href="/" className={styles.logo} aria-label="Studio Mallow home">
-            <Image src="/f/S4Fxl3suNqSbsss5PpgWAY69kMs.png" alt="" width={128} height={54} priority className={styles.logoImg} />
+          <Link href="/" className={styles.logo} aria-label="hasansekman home">
+            <span className={styles.logoName}>hasansekman</span>
           </Link>
           <div className={styles.links}>
             {NAV_LINKS.map((l) => (

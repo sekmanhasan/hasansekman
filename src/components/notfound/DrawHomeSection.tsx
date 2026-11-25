@@ -38,7 +38,7 @@ export default function DrawHomeSection() {
       <div className={s.container} data-framer-name="Container">
         <Tag label="Error 404" />
         <h1 className={`t-96 ${s.title}`}>Lost? Draw yourself a way out.</h1>
-        <p className={`t-22 ${s.text}`}>Draw a line from Mallow to the little house. Any route works, the sillier the better.</p>
+        <p className={`t-22 ${s.text}`}>Draw a line from hasansekman to the little house. Any route works, the sillier the better.</p>
         <div className={s.button}>
           <Button label="Take me home" href="/" />
         </div>

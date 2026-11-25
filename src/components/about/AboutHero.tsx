@@ -68,7 +68,7 @@ export default function AboutHero() {
         <div className={s.headingWrapper} data-framer-name="Heading Wrapper">
           <Tag label="About us" />
           <SprinkleText as="h1" className={`t-160 ${s.title}`}>
-            Hello, we’re Mallow.
+            Hello, we’re hasansekman.
           </SprinkleText>
           <p className={`t-22 ${s.intro}`}>
             Seven people in a ground-floor studio in London, making brands, websites, packaging and the odd object since 2019.

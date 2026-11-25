@@ -16,10 +16,7 @@ const BIG_KEYS = [
 ];
 
 const SOCIAL_KEYS = [
-  { label: "IG", screenTitle: "Instagram", fill: "pink", href: "https://instagram.com" },
-  { label: "IN", screenTitle: "LinkedIn", fill: "light", href: "https://linkedin.com" },
-  { label: "DR", screenTitle: "Dribbble", fill: "yellow", href: "https://dribbble.com" },
-  { label: "X", screenTitle: "Behance", fill: "purple", href: "https://x.com" },
+  { label: "IG", screenTitle: "Instagram", fill: "pink", href: "https://www.instagram.com/hasansekman" },
 ];
 
 const HOME_KEY = {
@@ -103,11 +100,11 @@ export default function Footer() {
               <ToyKey
                 variant="small"
                 legend="Write to us"
-                label="hello@studiomallow.co"
+                label="hasansekman@outlook.com"
                 screenTitle="Write to us"
-                screen="Opens your email app, addressed to hello@studiomallow.co."
+                screen="Opens your email app, addressed to hasansekman@outlook.com."
                 fill="orange"
-                href="mailto:hello@studiomallow.co"
+                href="mailto:hasansekman@outlook.com"
                 className={styles.mailKey}
               />
               {SOCIAL_KEYS.map((k) => (
@@ -117,8 +114,8 @@ export default function Footer() {
           </div>
           <div className={styles.credits}>
             <p className="t-14">
-              <a href="https://framer.link/PeIKkaT" target="_blank" rel="noopener" className={styles.footLink}>
-                © Real Mehedi
+              <a href="https://aden.studio" target="_blank" rel="noopener" className={styles.footLink}>
+                © Hasan Sekman
               </a>
             </p>
             <p className="t-14" style={{ color: "var(--cream)" }}>

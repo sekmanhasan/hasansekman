@@ -9,7 +9,7 @@ export default function Join() {
           <h3 className="t-36">Room for one more</h3>
           <p className={`t-16 ${s.text}`}>We’re hiring a mid-weight designer. Send three things you made and one thing you’d change about this site.</p>
         </div>
-        <Button label="Send us your work" href="mailto:hello@studiomallow.co?subject=Joining%20Studio%20Mallow" />
+        <Button label="Send us your work" href="mailto:hasansekman@outlook.com?subject=Joining%20hasansekman" />
       </div>
     </section>
   );
