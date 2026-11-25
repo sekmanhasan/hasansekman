@@ -227,3 +227,11 @@
   .mailKey { flex: none; width: 100% !important; height: 84px !important; }
   .socialKey { width: 52px !important; height: 52px !important; }
 }
+
+@media (max-width: 380px) {
+  .keyboard { padding: 18px 12px 22px; }
+  .bigKey :global(.t-36) {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+}

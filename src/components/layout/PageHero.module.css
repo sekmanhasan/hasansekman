@@ -106,7 +106,7 @@
   .titleBlock { gap: 22px; }
   .tapeRow { padding-right: 0; }
   .tape { padding: 16px 72px 12px; align-items: center; text-align: center; }
-  .makerRail { top: -14px; bottom: auto; right: -10px; width: 96px; height: 76px; }
+  .makerRail { top: -14px; bottom: auto; right: 20px; width: 96px; height: 76px; }
   .container { flex-direction: column; align-items: center; gap: 28px; }
   .headingWrapper { flex: none; width: 100%; align-items: center; text-align: center; }
 }

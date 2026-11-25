@@ -35,12 +35,21 @@ const LINE_FONT = { fontFamily: "var(--font-body)", fontStyle: "normal", fontWei
 
 export default function Footer() {
   const [phone, setPhone] = useState(false);
+  const [narrow, setNarrow] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 809.98px)");
-    const sync = () => setPhone(mq.matches);
+    const tight = window.matchMedia("(max-width: 420px)");
+    const sync = () => {
+      setPhone(mq.matches);
+      setNarrow(tight.matches);
+    };
     sync();
     mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
+    tight.addEventListener("change", sync);
+    return () => {
+      mq.removeEventListener("change", sync);
+      tight.removeEventListener("change", sync);
+    };
   }, []);
 
   return (
@@ -78,9 +87,9 @@ export default function Footer() {
                   idleLine="Each key opens a page. The long one writes to us."
                   idleTitle="Press a key"
                   lineColour="#fbf7f1"
-                  lineFont={{ ...LINE_FONT, fontSize: phone ? "14px" : "16px" }}
+                  lineFont={{ ...LINE_FONT, fontSize: narrow ? "12px" : phone ? "14px" : "16px" }}
                   titleColour="#ffbb00"
-                  titleFont={{ ...TITLE_FONT, fontSize: phone ? "30px" : "40px" }}
+                  titleFont={{ ...TITLE_FONT, fontSize: narrow ? "26px" : phone ? "30px" : "40px" }}
                   typing
                   style={{ width: "100%", height: "100%" }}
                 />

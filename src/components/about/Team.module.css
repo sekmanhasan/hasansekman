@@ -106,5 +106,9 @@
   .container { gap: 88px; }
   .headingWrapper { align-items: center; gap: 16px; }
   .headingWrapper > * { text-align: center; }
-  .grid { grid-template-columns: repeat(1, minmax(50px, 1fr)); gap: 96px 18px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 96px 18px; }
+  .card { min-width: 0; }
+  .grid > * { justify-self: center; width: calc(100% - 48px); }
+  .grid > :nth-child(odd) { rotate: 1.5deg !important; }
+  .grid > :nth-child(even) { rotate: -1.5deg !important; }
 }

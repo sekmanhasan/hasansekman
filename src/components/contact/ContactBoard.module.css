@@ -510,14 +510,29 @@ textarea.input:focus,
     width: 100%;
     padding: 0;
   }
-  .notes .noteWrite {
-    width: 300px;
+  .notes .note,
+  .notes .noteWrite,
+  .notes .noteCall,
+  .notes .noteStudio {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+  .notes .noteWrite a {
+    font-size: clamp(13px, 4.4vw, 16px);
+  }
+  .socials {
+    justify-self: center;
+  }
+  .socials > [data-framer-name="Pin"] {
+    left: 50% !important;
+    margin-left: -12px;
   }
   .board .sayHi {
     width: 96px;
     height: 96px;
     left: unset;
-    right: -8px;
-    top: -34px;
+    right: 8px;
+    top: -18px;
   }
 }

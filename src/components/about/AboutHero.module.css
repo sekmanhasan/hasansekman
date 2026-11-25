@@ -143,12 +143,14 @@
 .hint {
   display: flex;
   width: max-content;
+  max-width: calc(100vw - 48px);
   padding: 10px 16px;
   border-radius: 999px;
   background-color: var(--yellow);
   rotate: -2deg;
   color: var(--dark);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 @media (min-width: 810px) and (max-width: 1199.98px) {
@@ -169,7 +171,17 @@
 @media (max-width: 809.98px) {
   .hero { padding: 110px 20px 32px; }
   .field { height: 700px; }
+  .headingWrapper { max-width: 100%; min-width: 0; }
+  .hero .title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: clamp(40px, 12.5vw, 64px);
+  }
   .phoneHidden { display: none; }
+  .bubble { left: 0; width: min(200px, 68vw); }
+  .bubbleLeft { left: auto; right: 0; }
+  .a .bubble, .b .bubble, .h .bubble { top: calc(100% + 8px); }
   .a { left: 7px; top: 18px; width: 79px; height: 79px; }
   .b { right: 18px; top: 6px; width: 73px; height: 73px; }
   .c { left: 14px; top: 560px; width: 74px; height: 74px; }
