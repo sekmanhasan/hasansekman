@@ -61,7 +61,7 @@ export default function Studio() {
           <Tag label="The studio" />
           <SprinkleText className={`t-96 ${s.dark}`}>Inside the ground floor</SprinkleText>
           <p className={`t-16 ${s.dark} ${s.intro}`}>
-            A ground-floor shopfront in London: one long table, a drawer of old type and a corner for photographing what we make.
+            A ground-floor shopfront in Mersin-TR: one long table, a drawer of old type and a corner for photographing what we make.
           </p>
         </div>
       </div>

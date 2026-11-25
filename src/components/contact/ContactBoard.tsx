@@ -299,22 +299,12 @@ export default function ContactBoard() {
             <PinnedNote
               className={`${s.note} ${s.noteCall}`}
               label="Call us"
-              value="+44 20 7946 0018"
-              href="tel:+442079460018"
-              detail="Monday to Friday, 9am to 6pm, London time."
+              value="+90 532 742 54 95"
+              href="tel:+905327425495"
+              detail="Monday to Friday, 9am to 6pm, Mersin-TR time."
               fill="purple"
               pin="yellow"
               rotate={2}
-            />
-            <PinnedNote
-              className={`${s.note} ${s.noteTalk}`}
-              label="Rather talk?"
-              value="Book a 30-minute call"
-              detail="Half an hour with a designer, on video."
-              fill="orange"
-              pin="yellow"
-              rotate={-2}
-              button={{ label: "Pick a time", href: "/book" }}
             />
             <div
               className={`${bs.paper} ${s.socials}`}
@@ -336,8 +326,7 @@ export default function ContactBoard() {
             <PinnedNote
               className={`${s.note} ${s.noteStudio}`}
               label="Studio"
-              value="82 Columbia Road, London"
-              detail="Monday to Friday, 9am to 6pm. Ring the bell, the coffee’s usually on."
+              value="Mersin Türkiye"
               fill="pink"
               pin="blue"
               rotate={-2}
@@ -371,7 +360,7 @@ export default function ContactBoard() {
         />
         <Sticker
           className={`${s.sticker} ${s.madeIn}`}
-          label="Made in London"
+          label="Made in Mersin-TR"
           colour="purple"
           oval
           rotate={9}

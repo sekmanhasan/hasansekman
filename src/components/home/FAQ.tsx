@@ -122,7 +122,7 @@ export default function FAQ() {
               <h3 className="t-36">Give us a ring</h3>
               <p className="t-16">Monday to Friday, 9 to 6. You’ll talk to a designer, not a switchboard.</p>
               <div className={s.spacer} data-framer-name="Spacer" />
-              <Button label="Call the studio" href="tel:+442079460018" />
+              <Button label="Call the studio" href="tel:+905327425495" />
             </div>
           </div>
         </div>

@@ -119,7 +119,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="t-14" style={{ color: "var(--cream)" }}>
-              London, UK
+              Mersin-TR
             </p>
           </div>
         </div>

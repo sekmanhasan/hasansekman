@@ -92,7 +92,7 @@ function AvailabilityTicket() {
         <div className={s.notch} data-framer-name="Notch" />
         <div className={s.clock}>
           <StudioClock
-            city="London"
+            city="Mersin-TR"
             closedDot={color("muted")}
             closeHour={18}
             font={{ fontFamily: bricolage.style.fontFamily, fontSize: "16px", fontStyle: "normal", fontWeight: 600, letterSpacing: "0em", lineHeight: "1em" }}
@@ -103,7 +103,7 @@ function AvailabilityTicket() {
             openHour={9}
             outText="We're out for the day"
             replyText="Replies within 24 hours, Monday to Friday."
-            timeZone="Europe/London"
+            timeZone="Europe/Istanbul"
             weekends={false}
             style={{ width: "100%" }}
           />

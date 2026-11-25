@@ -89,7 +89,7 @@ export default function StatementLine() {
                         hasansekman
                       </p>
                       <p className="t-13" style={{ textAlign: "center", color: "var(--muted)" }}>
-                        Ground floor, London · since 2019
+                        Ground floor, Mersin-TR · since 2019
                       </p>
                     </div>
                     <div className={s.rule} data-framer-name="Rule" />

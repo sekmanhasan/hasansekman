@@ -71,7 +71,7 @@ export default function AboutHero() {
             Hello, we’re hasansekman.
           </SprinkleText>
           <p className={`t-22 ${s.intro}`}>
-            Seven people in a ground-floor studio in London, making brands, websites, packaging and the odd object since 2019.
+            Seven people in a ground-floor studio in Mersin-TR, making brands, websites, packaging and the odd object since 2019.
           </p>
         </div>
         {OBJECTS.map((o, i) => (

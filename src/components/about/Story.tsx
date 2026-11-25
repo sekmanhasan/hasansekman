@@ -9,7 +9,7 @@ import s from "./Story.module.css";
 const ROWS = [
   {
     year: "2019",
-    title: "A table in Hackney",
+    title: "A table in Mersin-TR",
     text: "Two designers, one borrowed table and a bag of plasticine.",
     colour: "orange",
     image: "/f/1l5ivOYyjAR4PJKTzB7s9Dfioc8.jpg",

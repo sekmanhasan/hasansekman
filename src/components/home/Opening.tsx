@@ -13,7 +13,7 @@ const img = (file: string, alt: string) => ({ src: `/f/${file}`, alt });
 const ITEMS = [
   { id: "u98B21ib_", kind: "service", label: "We do", link: "/", showLink: false, title: "Brand identity", text: "Names, logos and the whole kit, made for the people who will use it every day." },
   { id: "fmHIf8u1U", kind: "work", image: img("snMgEmRClEP2X7rxckFywACtluE.webp", "Red Musse t-shirt on a dark background"), link: "/projects/musse-design-week", showLink: true, title: "Musse Design Week", text: "A stretchy red identity for a week-long design festival." },
-  { id: "Di0VzCr04", kind: "fact", showLink: true, title: "7", text: "people around one big table in London." },
+  { id: "Di0VzCr04", kind: "fact", showLink: true, title: "7", text: "people around one big table in Mersin-TR." },
   { id: "NvsrflVpO", kind: "service", label: "We make", link: "/", showLink: false, title: "Websites", text: "Framer sites that load fast and that your team can edit without calling us." },
   { id: "VMSVyuOy_", kind: "fact", link: "/", showLink: true, title: "120+", text: "launches since 2019." },
   { id: "s9e6QIvbV", kind: "service", image: img("W0AFbAhxQqTtea16VTOtUuyWw.jpg", "Stacked patterned tin cans on a green background"), label: "We do", link: "/", showLink: false, title: "Packaging Desings", text: "Boxes, bags and labels people keep long after the product is gone." },

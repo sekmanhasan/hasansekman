@@ -18,7 +18,7 @@ export default function PinnedNote({
   label: string;
   value: string;
   href?: string;
-  detail: string;
+  detail?: string;
   fill: string;
   pin: string;
   rotate?: number;
@@ -49,7 +49,7 @@ export default function PinnedNote({
           {value}
         </a>
       </p>
-      <p className="t-14">{detail}</p>
+      {detail ? <p className="t-14">{detail}</p> : null}
       {button && (
         <div className={b.buttonWrap} data-framer-name="Button Wrap">
           <Button label={button.label} href={button.href} variant="light" />
