@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 48px 140px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1700px;
+  padding: 40px 40px 40px 44px;
+  border-radius: 40px;
+  background-color: var(--dark);
+  color: var(--cream);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.text {
+  max-width: 560px;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .section { padding: 0 32px 110px; }
+}
+
+@media (max-width: 809.98px) {
+  .section { padding: 0 20px 88px; }
+  .card { flex-direction: column; gap: 24px; padding: 28px; border-radius: 28px; }
+  .copy { align-items: center; width: 100%; flex: none; text-align: center; }
+}

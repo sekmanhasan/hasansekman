@@ -1,0 +1,211 @@
+.book {
+  --ease: cubic-bezier(0.3, 1.12, 0.5, 1);
+  --t: 0.55s;
+  position: relative;
+  display: flex;
+  flex: none;
+  width: 120px;
+  height: 440px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: width var(--t) var(--ease);
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 120px;
+  height: 440px;
+  border-radius: 22px;
+  overflow: clip;
+  will-change: transform;
+  transition:
+    width var(--t) var(--ease),
+    height var(--t) var(--ease),
+    top var(--t) var(--ease),
+    box-shadow var(--t) var(--ease);
+}
+
+.strip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  width: 120px;
+  height: 100%;
+  padding: 28px 0 26px;
+  transition: width var(--t) var(--ease);
+}
+
+.band {
+  width: 60px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--cream);
+  opacity: 0.45;
+}
+
+.category,
+.titleBox {
+  transition: opacity 0.3s ease;
+}
+
+.titleBox {
+  position: absolute;
+  top: 160px;
+  left: -110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  height: 120px;
+  padding: 0 18px;
+  pointer-events: none;
+  rotate: -90deg;
+}
+
+.titleBox h3 {
+  width: 100%;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: none;
+  width: 386px;
+  height: 100%;
+  padding: 18px 20px 20px 18px;
+  background-color: var(--cream);
+}
+
+.cover {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: clip;
+  flex: none;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.chip {
+  padding: 5px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.balance {
+  width: 100%;
+  text-wrap: balance;
+}
+
+.read {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.row {
+  display: none;
+}
+
+@media (max-width: 1199.98px) {
+  .book {
+    width: 100%;
+    height: 96px;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 96px;
+    border-radius: 18px;
+  }
+
+  .strip,
+  .page {
+    display: none;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    padding: 0 18px 0 24px;
+  }
+
+  .row h3 {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.15em;
+    letter-spacing: -0.01em;
+    color: var(--dark);
+    text-wrap: balance;
+  }
+
+  .row p {
+    flex: none;
+    color: var(--dark);
+  }
+
+  .pages {
+    flex: none;
+    width: 10px;
+    height: 61px;
+    border-radius: 3px;
+    background: var(--cream);
+  }
+}
+
+@media (hover: hover) and (min-width: 1200px) {
+  .book:hover {
+    width: 460px;
+  }
+  .book:hover .card {
+    top: -30px;
+    width: 460px;
+    height: 470px;
+    box-shadow:
+      inset 2px 3px 1px 0px var(--clay-rim, var(--sh-l)),
+      inset 10px 22px 30px -14px var(--clay-glow, var(--sh-l2)),
+      inset -10px -16px 24px -8px var(--clay-shade, var(--sh-d)),
+      14px 36px 56px -20px var(--clay-cast, var(--sh-drop)),
+      4px 8px 16px -6px var(--sh-d);
+  }
+  .book:hover .strip {
+    width: 74px;
+  }
+  .book:hover .category,
+  .book:hover .titleBox {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,263 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  padding: 160px 40px;
+  border-radius: 40px;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 640px;
+}
+
+.titleWrap h2 {
+  width: 100%;
+}
+
+.intro {
+  width: 380px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 48px 52px 52px;
+  border-radius: 40px;
+  rotate: -1deg;
+}
+
+.tape {
+  position: absolute;
+  top: -16px;
+  width: 140px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: var(--yellow);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.tapeL {
+  left: 60px;
+  rotate: -4deg;
+}
+
+.tapeR {
+  right: 70px;
+  rotate: 5deg;
+}
+
+.card h2 {
+  width: 100%;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 18px 0 40px;
+}
+
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: var(--bg);
+  box-shadow: inset 3px 4px 7px -2px var(--sh-d), inset -2px -2px 0px 0px var(--sh-l);
+  white-space: nowrap;
+}
+
+.columns {
+  display: flex;
+  gap: 56px;
+  width: 100%;
+}
+
+.bring {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 300px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.item p {
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--orange);
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background-color: var(--bg);
+  box-shadow: inset 3px 4px 7px -2px var(--sh-d), inset -2px -2px 0px 0px var(--sh-l);
+  transition: background-color 0.4s ease;
+}
+
+.checkDone {
+  box-shadow: var(--clay-s);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.strike {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scribble {
+  flex: 1 0 0;
+  height: 1px;
+  width: 100%;
+}
+
+.body > p {
+  text-wrap: balance;
+}
+
+.weeks {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: var(--yellow);
+  white-space: nowrap;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .section { padding: 120px 32px; }
+  .container { gap: 44px; }
+  .heading { gap: 20px; justify-content: flex-start; }
+  .titleWrap { width: 100%; }
+  .intro { width: 100%; }
+  .card { padding: 40px 36px; border-radius: 34px; }
+  .tapeL { left: 40px; width: 120px; }
+  .tapeR { right: 40px; width: 120px; }
+  .meta { padding: 16px 0 28px; }
+  .columns { flex-direction: column; gap: 32px; }
+  .bring, .method { width: 100%; flex: none; }
+}
+
+@media (max-width: 809.98px) {
+  .wrap { padding: 0; }
+  .section { padding: 72px 20px; }
+  .container { gap: 40px; }
+  .heading { gap: 16px; justify-content: flex-start; }
+  .titleWrap { width: 100%; gap: 16px; }
+  .intro { width: 100%; }
+  .card { padding: 30px 22px; border-radius: 28px; }
+  .tapeL { left: 24px; width: 96px; }
+  .tapeR { right: 24px; width: 96px; }
+  .meta { padding: 14px 0 26px; }
+  .columns { flex-direction: column; gap: 28px; }
+  .bring, .method { width: 100%; flex: none; }
+}

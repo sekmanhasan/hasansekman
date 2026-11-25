@@ -1,0 +1,224 @@
+.outer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  padding: 120px 40px 32px;
+  border-radius: 40px;
+  background-color: var(--purple);
+  z-index: 1;
+}
+
+.mat {
+  position: absolute;
+  top: 40px;
+  left: 24px;
+  right: 24px;
+  bottom: 64px;
+  pointer-events: none;
+}
+
+.crumb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.crumb1 { left: 64px; top: 70px; width: 22px; height: 18px; }
+.crumb2 { left: 96px; top: 92px; width: 14px; height: 12px; }
+.crumb3 { right: 132px; top: 98px; width: 18px; height: 15px; }
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 44px 52px 48px;
+  border-radius: 60px;
+  rotate: -1.5deg;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+}
+
+.speaker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 192px;
+  flex: none;
+}
+
+.hole {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background-color: var(--light);
+  box-shadow: inset 2px 5px 9px 0px var(--sh-d), inset -1px -2px 0px 0px var(--sh-l);
+}
+
+.screen {
+  flex: 1 0 0;
+  width: 1px;
+  height: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 28px;
+  border-radius: 26px;
+  background-color: var(--dark);
+  box-shadow: inset 3px 6px 14px 0px var(--sh-drop), inset -2px -3px 0px 0px var(--sh-l2);
+}
+
+.knobs {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: none;
+}
+
+.homeKey {
+  width: 92px !important;
+  height: 92px !important;
+}
+
+.knob {
+  width: 66px;
+  height: 66px;
+  border-radius: 999px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(50px, 1fr));
+  grid-auto-rows: min-content;
+  gap: 18px;
+  width: 100%;
+}
+
+.bigKey {
+  width: 100% !important;
+  height: 134px !important;
+}
+
+.phoneHome {
+  display: none !important;
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.mailKey {
+  flex: 1 0 0;
+  width: 1px !important;
+  height: 96px !important;
+}
+
+.socialKey {
+  width: 96px !important;
+  height: 96px !important;
+}
+
+.credits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footLink {
+  color: var(--cream);
+  transition: color 0.2s cubic-bezier(0.44, 0, 0.56, 1);
+  text-decoration-color: var(--orange);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+}
+
+.footLink:hover {
+  color: var(--light);
+  text-decoration-line: underline;
+}
+
+.pencil {
+  position: absolute;
+  right: 44px;
+  bottom: 78px;
+  width: 230px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+  rotate: -16deg;
+}
+
+.pencilBody {
+  flex: 1 0 0;
+  height: 26px;
+  border-radius: 13px 3px 3px 13px;
+}
+
+.pencilTip {
+  flex: none;
+  width: 40px;
+  height: 26px;
+  border-radius: 3px 13px 13px 3px;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .footer { padding: 88px 32px 28px; }
+  .mat { top: 32px; left: 16px; right: 16px; bottom: 56px; }
+  .container { gap: 32px; }
+  .keyboard { border-radius: 50px; gap: 20px; padding: 36px 36px 40px; rotate: -1deg; }
+  .speaker { display: none; }
+  .topRow { gap: 24px; }
+  .keys { gap: 16px; grid-template-columns: repeat(3, minmax(50px, 1fr)); }
+  .bigKey { height: 120px !important; }
+  .keys > :nth-child(5) { grid-column: span 2; }
+  .bottomRow { gap: 16px; }
+  .mailKey { flex: none; width: 100% !important; height: 88px !important; }
+  .socialKey, .homeKey { width: 88px !important; height: 88px !important; }
+}
+
+@media (max-width: 809.98px) {
+  .outer { padding: 40px 20px; }
+  .footer { padding: 72px 20px 20px; }
+  .mat { top: 22px; left: 8px; right: 8px; bottom: 48px; }
+  .crumb, .speaker, .knobs, .pencil { display: none; }
+  .container { gap: 24px; }
+  .keyboard { border-radius: 38px; gap: 16px; padding: 22px 18px 26px; rotate: 0deg; }
+  .screen { border-radius: 22px; height: 112px; padding: 16px 20px; }
+  .keys { gap: 12px; grid-template-columns: repeat(2, minmax(50px, 1fr)); }
+  .bigKey { height: 96px !important; }
+  .phoneHome { display: block !important; }
+  .bottomRow { gap: 8px; justify-content: flex-start; }
+  .mailKey { flex: none; width: 100% !important; height: 84px !important; }
+  .socialKey { width: 52px !important; height: 52px !important; }
+}

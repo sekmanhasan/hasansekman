@@ -1,0 +1,41 @@
+"use client";
+// @ts-nocheck
+// Page Transition (two-tone sheet): page changes inside the site happen behind two sheets of clay. Click a link to
+// another page and a sheet in the Lead Colour slides up from the bottom, with the next page's colour a beat behind it
+// on top; their top edges bow softly while they move and flatten as they cover the screen. Framer changes page behind
+// them, then they lift away in the same order: the page colour first, showing the lead sheet, then the lead sheet,
+// while the new page rises into place.
+// Put one instance anywhere in the layout (it draws its own full-screen layer). Each page's colour comes from the Pages
+// list; a path also covers the pages under it ("/projects" covers every project page), and pages not in the list use
+// the Other Pages colour. Links that open a new tab, email and phone links, links to the page you are on, clicks with
+// a modifier key, and visitors who ask for less motion are left alone. If the new page takes too long to arrive, the
+// sheets lift anyway. Turn off Framer's own page effects so the two don't run together.
+// On the canvas it draws nothing.
+import{jsx as _jsx}from"react/jsx-runtime";import{addPropertyControls,ControlType,useIsStaticRenderer}from"@/lib/framer";import{useEffect}from"react";const DEFAULT_PAGES=[{path:"/",colour:"#6FA0E0"},{path:"/projects",colour:"#FF511C"},{path:"/about",colour:"#DFA8BA"},{path:"/journal",colour:"#FFBB00"},{path:"/contact",colour:"#9A89E3"},{path:"/book",colour:"#FF511C"}];// ---- timings (ms)
+const SLIDE=560// one sheet crossing the screen
+;const LAG=100// the second sheet follows the first by this much
+;const HOLD=120// at least this long fully covered
+;const RISE=760// the new page rises into place as the last sheet lifts
+;const RISE_FROM=56// px
+;const MAX_WAIT=2500// never keep the screen covered longer than this waiting for the next page
+;const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));const seg=(t,a,b)=>clamp((t-a)/(b-a));const easeInOut=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;const easeOut=t=>1-Math.pow(1-t,4);// A token colour arrives as var(--token-…, rgb(…)); read the real colour from the page.
+function realColour(c){const probe=document.createElement("span");probe.style.color=c;document.body.appendChild(probe);const v=getComputedStyle(probe).color;probe.remove();return v||"rgb(255, 187, 0)";}function pageFor(path,cfg){const clean=path.replace(/\/+$/,"")||"/";let best=null;for(const p of cfg.pages){const want=(p.path??"").trim().replace(/\/+$/,"")||"/";const hit=want==="/"?clean==="/":clean===want||clean.startsWith(want+"/");if(hit&&(!best||(best.path??"").length<(p.path??"").length))best=p;}return best;}const KEY="__mallowPageSheet";function install(cfg){const w=window;if(w[KEY]){w[KEY].cfg=cfg;return w[KEY];}const ctl={cfg,busy:false,passing:false};w[KEY]=ctl;// let us know when the router changes the address
+const notify=()=>window.dispatchEvent(new Event("mallow:route"));for(const m of["pushState","replaceState"]){const orig=history[m];history[m]=function(...args){const r=orig.apply(this,args);notify();return r;};}window.addEventListener("popstate",notify);// Spot a qualifying link click early, but take it over on the link itself (bubbling), after any layer in between
+// has had its say: a drag that ends on a card stops or cancels the click there, and then nothing happens here.
+// On the link it still runs before Framer's router, which listens higher up. Listen on window, not document:
+// published Framer sites run document listeners late (after the router has already changed page).
+window.addEventListener("click",e=>{if(ctl.passing||ctl.busy)return;if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;if(window.matchMedia?.("(prefers-reduced-motion: reduce)").matches)return;const a=e.target?.closest?.("a[href]");if(!a||a.target==="_blank"||a.hasAttribute("download"))return;const url=new URL(a.href,location.href);if(url.origin!==location.origin||!/^https?:$/.test(url.protocol))return;if(url.pathname===location.pathname)return;// same page (or an anchor on it)
+const take=ev=>{if(ev!==e||ev.defaultPrevented)return;ev.preventDefault();ev.stopPropagation();run(ctl,a,url);};a.addEventListener("click",take,{once:true});setTimeout(()=>a.removeEventListener("click",take),0);},true);return ctl;}const SVG="http://www.w3.org/2000/svg";function run(ctl,a,url){ctl.busy=true;const cfg=ctl.cfg;const entry=pageFor(url.pathname,cfg);const vw=window.innerWidth;const vh=window.innerHeight;const bulge=Math.min(vh*.16,150)// how far a moving edge bows at its fastest
+;const layer=document.createElement("div");Object.assign(layer.style,{position:"fixed",inset:"0",zIndex:"2147483000",pointerEvents:"none",overflow:"hidden"});const svg=document.createElementNS(SVG,"svg");svg.setAttribute("viewBox",`0 0 ${vw} ${vh}`);svg.setAttribute("preserveAspectRatio","none");Object.assign(svg.style,{position:"absolute",inset:"0",width:"100%",height:"100%",display:"block"});// lead sheet underneath, the page's colour on top
+const sheets=[realColour(cfg.leadColour),realColour(entry?.colour||cfg.otherColour)].map(fill=>{const p=document.createElementNS(SVG,"path");p.style.fill=fill;svg.appendChild(p);return p;});layer.appendChild(svg);document.body.appendChild(layer);const covered=SLIDE+LAG// both sheets are over the page
+;const t0=performance.now();let arrivedAt=0// when the new page is on screen
+;let navigated=false;let revealAt=0;let page=null;const onRoute=()=>{if(location.pathname!==url.pathname)return;requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>arrivedAt=performance.now()-t0,60)));};window.addEventListener("mallow:route",onRoute);const finish=()=>{layer.remove();if(page){page.style.transform="";page.style.willChange="";}window.removeEventListener("mallow:route",onRoute);ctl.busy=false;};// a sheet's top edge rising from the bottom, bowing up in the middle while it moves
+const cover=(path,p)=>{if(p<=0)return path.setAttribute("d","");const y=vh*(1-easeInOut(p));const b=Math.sin(Math.PI*p)*bulge;path.setAttribute("d",`M0,${vh} L0,${y} Q${vw/2},${y-b} ${vw},${y} L${vw},${vh} Z`);};// a sheet's bottom edge rising to the top, its middle trailing a little
+const lift=(path,p)=>{if(p>=1)return path.setAttribute("d","");const y=vh*(1-easeInOut(p));const b=Math.sin(Math.PI*p)*bulge*.8;path.setAttribute("d",`M0,0 L${vw},0 L${vw},${y} Q${vw/2},${y+b} 0,${y} Z`);};const frame=now=>{const t=now-t0;if(!navigated&&t>=covered+20){navigated=true;ctl.passing=true;a.click()// Framer's router takes it from here
+;ctl.passing=false;}if(!revealAt&&(arrivedAt&&t>=Math.max(arrivedAt,covered+HOLD)||t>=MAX_WAIT)){revealAt=t;// the new page's Main rises into place as the lead sheet lifts (transform only, so nothing is hidden)
+page=document.querySelector("main")??null;if(page){page.style.willChange="transform";page.style.transform=`translateY(${RISE_FROM}px)`;}}if(!revealAt){cover(sheets[0],seg(t,0,SLIDE));cover(sheets[1],seg(t,LAG,LAG+SLIDE));}else{// the page colour lifts first, showing the lead sheet, which follows a beat later
+const r=t-revealAt;lift(sheets[1],seg(r,0,SLIDE));lift(sheets[0],seg(r,LAG,LAG+SLIDE));if(page)page.style.transform=`translateY(${(1-easeOut(seg(r,LAG,LAG+RISE)))*RISE_FROM}px)`;if(r>=LAG+Math.max(SLIDE,RISE))return finish();}requestAnimationFrame(frame);};requestAnimationFrame(frame);}/**
+ * @framerSupportedLayoutWidth fixed
+ * @framerSupportedLayoutHeight fixed
+ */export default function PageTransition(props){const isStatic=useIsStaticRenderer();const cfg={pages:props.pages?.length?props.pages:DEFAULT_PAGES,otherColour:props.otherColour??"#FFBB00",leadColour:props.leadColour??"#2A1D17"};useEffect(()=>{if(isStatic||typeof window==="undefined")return;install(cfg);});return /*#__PURE__*/_jsx("div",{style:{...props.style,pointerEvents:"none"},"aria-hidden":true});}addPropertyControls(PageTransition,{pages:{type:ControlType.Array,title:"Pages",control:{type:ControlType.Object,controls:{path:{type:ControlType.String,title:"Path",defaultValue:"/projects"},colour:{type:ControlType.Color,title:"Colour",defaultValue:"#FF511C"}}},defaultValue:DEFAULT_PAGES},otherColour:{type:ControlType.Color,title:"Other Pages",defaultValue:"#FFBB00"},leadColour:{type:ControlType.Color,title:"Lead Colour",defaultValue:"#2A1D17"}});
+

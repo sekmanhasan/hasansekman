@@ -1,0 +1,351 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 140px 0;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  width: 100%;
+  max-width: 1780px;
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 640px;
+}
+
+.title h2 {
+  width: 100%;
+}
+
+.intro {
+  width: 380px;
+  text-wrap: balance;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.tags {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.string {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--rope);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pin {
+  position: absolute;
+  top: -6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  z-index: 3;
+}
+
+.pinL {
+  left: -7px;
+}
+
+.pinR {
+  right: -7px;
+}
+
+.hanger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 0;
+  width: 1px;
+  z-index: 1;
+  will-change: transform;
+}
+
+.swing,
+.tilt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hook {
+  display: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.cord {
+  width: 3px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: var(--rope);
+  flex: none;
+}
+
+.cord1 { height: 48px; }
+.cord2 { height: 92px; }
+.cord3 { height: 42px; }
+
+.tag {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 54px 26px 28px;
+  border-radius: 26px 26px 34px 34px;
+}
+
+.number {
+  position: absolute;
+  top: 19px;
+  left: 22px;
+  white-space: pre;
+  opacity: 0.9;
+}
+
+.holeRow {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  pointer-events: none;
+}
+
+.hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: var(--bg);
+  box-shadow: inset 3px 4px 7px -2px var(--sh-d), inset -2px -2px 0px 0px var(--sh-l);
+}
+
+.badge {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  display: flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  rotate: 8deg;
+  z-index: 2;
+}
+
+.tag h3,
+.price p,
+.main p {
+  text-wrap: balance;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.rule {
+  position: relative;
+  width: 100%;
+  height: 0;
+  opacity: 0.7;
+}
+
+.rule::after,
+.stub::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rule::after {
+  border: 1px dashed var(--muted);
+}
+
+.stub::before {
+  border-left: 2px dashed var(--muted);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.feature {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.feature p {
+  flex: 1 0 0;
+  width: 1px;
+  text-wrap: balance;
+}
+
+.dotWrap {
+  display: flex;
+  flex-direction: column;
+  padding-top: 7px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: var(--orange);
+}
+
+.availability {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.ticketAppear {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+}
+
+.ticketBox {
+  width: 780px;
+  height: 240px;
+  rotate: -1.5deg;
+}
+
+.ticket {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 0 0;
+  width: 1px;
+  height: 100%;
+  padding: 32px 40px;
+}
+
+.stub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  width: 290px;
+  height: 92%;
+  padding: 28px 32px;
+}
+
+.notch {
+  position: absolute;
+  top: -32px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: var(--bg);
+}
+
+.clock {
+  width: 100%;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .section { padding: 120px 0; }
+  .container { gap: 56px; }
+  .heading { flex-direction: column; align-items: flex-start; gap: 20px; padding: 0 32px; }
+  .title { width: 100%; }
+  .intro { width: 100%; }
+  .rail { padding: 0; overflow: hidden; overflow-x: auto; }
+  .tags { gap: 20px; padding: 14px 32px 44px; width: min-content; }
+  .string { top: 14px; }
+  .pinL { left: 24px; top: 8px; }
+  .pinR { right: 24px; top: 8px; }
+  .hanger { flex: none; width: 280px; }
+  .availability { padding: 0 32px; }
+  .ticketAppear { width: 100%; }
+  .ticketBox { rotate: -1deg; }
+}
+
+@media (max-width: 809.98px) {
+  .section { padding: 88px 0; }
+  .container { gap: 40px; }
+  .heading { flex-direction: column; align-items: center; gap: 16px; padding: 0 20px; text-align: center; }
+  .title { width: 100%; align-items: center; gap: 16px; }
+  .intro { width: 100%; }
+  .rail { padding: 0 20px; }
+  .tags { flex-direction: column; align-items: center; gap: 36px; }
+  .string, .pin { display: none; }
+  .hook { display: block; }
+  .hanger { flex: none; width: 88%; }
+  .cord, .cord1, .cord3 { height: 26px; }
+  .cord2 { height: 44px; }
+  .availability { padding: 0 16px; }
+  .ticketAppear { width: 100%; }
+  .ticketBox { width: 100%; height: auto; rotate: 0deg; }
+  .ticket { flex-direction: column; align-items: stretch; }
+  .main { width: 100%; flex: none; padding: 28px 26px 24px; }
+  .stub { width: 100%; height: auto; padding: 26px 26px 28px; }
+  .stub::before { border-left: 0; border-top: 2px dashed var(--muted); }
+  .notch { top: -16px; }
+}

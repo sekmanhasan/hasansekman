@@ -1,0 +1,86 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 160px 0;
+  background-color: var(--bg);
+  z-index: 1;
+  scroll-margin-top: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1780px;
+  padding: 0 40px;
+}
+
+.headingRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  width: 1px;
+  max-width: 640px;
+}
+
+.line {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1780px;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 2%, #000 98%, rgba(0, 0, 0, 0) 100%) add;
+  mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 2%, #000 98%, rgba(0, 0, 0, 0) 100%) add;
+}
+
+.rope {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 34px;
+  width: max-content;
+  padding: 90px 40px 140px;
+}
+
+.cardBox {
+  position: relative;
+  width: 340px;
+  flex: none;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .section { gap: 32px; padding: 120px 0; }
+  .container { padding: 0 32px; }
+  .track { gap: 28px; padding: 90px 32px 120px; }
+}
+
+@media (max-width: 809.98px) {
+  .section { gap: 24px; padding: 88px 0; }
+  .container { padding: 0 20px; }
+  .headingRow { flex-direction: column; align-items: center; gap: 18px; }
+  .headingWrapper { width: 100%; align-items: center; gap: 16px; text-align: center; }
+  .track { gap: 18px; padding: 84px 20px 100px; }
+  .cardBox { width: 270px; }
+}

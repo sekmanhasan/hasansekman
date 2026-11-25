@@ -1,0 +1,179 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 66px 48px 48px;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1700px;
+  height: 780px;
+}
+
+.headingWrapper {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 860px;
+}
+
+.title,
+.intro {
+  color: var(--dark);
+  text-align: center;
+}
+
+.intro {
+  max-width: 560px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.spot {
+  position: absolute;
+  z-index: 2;
+}
+
+.a { left: 66px; top: 78px; width: 120px; height: 120px; }
+.b { right: 133px; top: 62px; width: 110px; height: 110px; }
+.c { left: 155px; top: 515px; width: 112px; height: 112px; }
+.d { right: 95px; top: 484px; width: 104px; height: 104px; }
+.e { left: calc(38.0435% - 42px); top: calc(26.6667% - 42px); width: 84px; height: 84px; }
+.f { right: 350px; top: 610px; width: 92px; height: 92px; }
+.g { right: 52px; top: 262px; width: 80px; height: 80px; }
+.h { left: 22px; top: 312px; width: 86px; height: 86px; }
+.i { left: calc(65.2174% - 39px); top: calc(25.2564% - 39px); width: 78px; height: 78px; }
+.j { left: 375px; top: 640px; width: 80px; height: 80px; }
+
+.object {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.blob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 44%;
+  box-shadow: var(--bead-sh);
+}
+
+.bubble {
+  position: absolute;
+  top: -104px;
+  left: -60px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 230px;
+  padding: 12px 16px 12px 12px;
+  border-radius: 24px 24px 24px 8px;
+  background-color: var(--light);
+  box-shadow: inset 0px 2px 1px 0px var(--sh-l), inset 0px -4px 6px 0px var(--sh-faint), 0px 26px 40px -18px var(--sh-drop);
+  pointer-events: none;
+}
+
+.bubbleLeft {
+  left: auto;
+  right: -20px;
+  border-radius: 24px 24px 8px 24px;
+}
+
+.face {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 44%;
+  overflow: clip;
+}
+
+.face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 0 0;
+  width: 1px;
+  color: var(--dark);
+}
+
+.copy p {
+  text-wrap: balance;
+}
+
+.hintRow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hint {
+  display: flex;
+  width: max-content;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: var(--yellow);
+  rotate: -2deg;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .hero { padding: 66px 32px 40px; }
+  .field { height: 760px; }
+  .a { left: 30px; top: 70px; width: 98px; height: 98px; }
+  .b { right: 59px; top: 60px; width: 90px; height: 90px; }
+  .c { left: 45px; top: 600px; width: 92px; height: 92px; }
+  .d { right: 34px; top: 592px; width: 85px; height: 85px; }
+  .e { left: 224px; top: 20px; width: 69px; height: 69px; }
+  .f { right: 179px; top: 598px; width: 75px; height: 75px; }
+  .g { right: 24px; top: 214px; width: 66px; height: 66px; }
+  .h { left: 0; top: 330px; width: 71px; height: 71px; }
+  .i { left: auto; right: 219px; top: 10px; width: 64px; height: 64px; }
+  .j { left: 209px; top: 600px; width: 66px; height: 66px; }
+}
+
+@media (max-width: 809.98px) {
+  .hero { padding: 110px 20px 32px; }
+  .field { height: 700px; }
+  .phoneHidden { display: none; }
+  .a { left: 7px; top: 18px; width: 79px; height: 79px; }
+  .b { right: 18px; top: 6px; width: 73px; height: 73px; }
+  .c { left: 14px; top: 560px; width: 74px; height: 74px; }
+  .d { right: 22px; top: 548px; width: 69px; height: 69px; }
+  .f { left: 147px; right: auto; top: 536px; width: 61px; height: 61px; }
+  .h { left: 140px; top: 0; width: 57px; height: 57px; }
+}

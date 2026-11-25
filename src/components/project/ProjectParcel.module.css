@@ -1,0 +1,247 @@
+.root {
+  --ease: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --t: 0.55s;
+  --w: 284px;
+  --h: 446px;
+  --cover-b: 106px;
+  --cover-h: 140px;
+  --cover-x: 39px;
+  --cover-b-open: 210px;
+  --cover-h-open: 230px;
+  --parcel-b: 46px;
+  --parcel-b-open: 60px;
+  --parcel-h: 210px;
+  --parcel-x: 17px;
+  --tape-x: 108px;
+  --tape-w: 34px;
+  --flap-top: 190px;
+  --flap-top-open: 168px;
+  --flap-w: 125px;
+  --flap-h: 22px;
+  position: relative;
+  display: block;
+  flex: none;
+  width: var(--w);
+  height: var(--h);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.Large {
+  --w: 384px;
+  --h: 600px;
+  --cover-b: 126px;
+  --cover-h: 190px;
+  --cover-x: 53px;
+  --cover-b-open: 284px;
+  --cover-h-open: 310px;
+  --parcel-b-open: 65px;
+  --parcel-h: 284px;
+  --parcel-x: 23px;
+  --tape-x: 146px;
+  --tape-w: 46px;
+  --flap-top: 270px;
+  --flap-top-open: 240px;
+  --flap-w: 169px;
+  --flap-h: 30px;
+}
+
+.cover {
+  position: absolute;
+  left: var(--cover-x);
+  right: var(--cover-x);
+  bottom: var(--cover-b);
+  height: var(--cover-h);
+  z-index: 1;
+  border-radius: 16px;
+  overflow: clip;
+  box-shadow: inset 1px 2px 1px 0px var(--sh-l), 5px 12px 20px -7px var(--sh-drop), 1px 3px 5px -2px var(--sh-d);
+  transition:
+    bottom var(--t) var(--ease),
+    height var(--t) var(--ease),
+    rotate var(--t) var(--ease);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parcel {
+  position: absolute;
+  left: var(--parcel-x);
+  right: var(--parcel-x);
+  bottom: var(--parcel-b);
+  height: var(--parcel-h);
+  z-index: 2;
+  border-radius: 22px;
+  transition:
+    bottom var(--t) var(--ease),
+    rotate var(--t) var(--ease),
+    box-shadow var(--t) var(--ease);
+}
+
+.tape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--tape-x);
+  width: var(--tape-w);
+  background-color: var(--yellow);
+  opacity: 0.85;
+}
+
+.sticker {
+  position: absolute;
+  top: 32px;
+  right: 14px;
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: var(--orange);
+  color: var(--cream);
+  rotate: 8deg;
+  white-space: nowrap;
+}
+
+.Large .sticker {
+  top: 43px;
+  right: 19px;
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.Large .label {
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  gap: 6px;
+  padding: 14px 16px;
+}
+
+.meta {
+  color: var(--muted);
+}
+
+.flap {
+  position: absolute;
+  top: var(--flap-top);
+  width: var(--flap-w);
+  height: var(--flap-h);
+  z-index: 3;
+  border-radius: 12px;
+  background-color: var(--rope);
+  transition:
+    top var(--t) var(--ease),
+    rotate var(--t) var(--ease);
+}
+
+.flapL {
+  left: var(--parcel-x);
+  transform-origin: 0 50%;
+}
+
+.flapR {
+  right: var(--parcel-x);
+  transform-origin: 100% 50%;
+}
+
+.belt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  height: 46px;
+}
+
+.notches {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 20px;
+}
+
+.notch {
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  background-color: var(--cream);
+  opacity: 0.14;
+}
+
+@media (min-width: 1200px) and (hover: hover) {
+  .root:hover .cover {
+    bottom: var(--cover-b-open);
+    height: var(--cover-h-open);
+    rotate: -3deg;
+  }
+  .root:hover .parcel {
+    bottom: var(--parcel-b-open);
+    rotate: -2deg;
+    box-shadow: var(--clay-l-hover);
+  }
+  .root:hover .sticker {
+    display: none;
+  }
+  .root:hover .flap {
+    top: var(--flap-top-open);
+  }
+  .root:hover .flapL {
+    rotate: -155deg;
+  }
+  .root:hover .flapR {
+    rotate: 155deg;
+  }
+}
+
+/* Tablet and phone: the "Small Open" parcel. */
+@media (max-width: 1199.98px) {
+  .root {
+    --w: 224px;
+    --h: 348px;
+    --cover-b: 160px;
+    --cover-h: 180px;
+    --cover-x: 34px;
+    --parcel-b: 56px;
+    --parcel-h: 160px;
+    --parcel-x: 17px;
+    --tape-x: 78px;
+    --tape-w: 34px;
+    --flap-top: 124px;
+    --flap-w: 95px;
+    --flap-h: 22px;
+  }
+  .cover { rotate: -3deg; }
+  .parcel {
+    rotate: -2deg;
+    box-shadow: var(--clay-l-hover);
+  }
+  .sticker,
+  .meta { display: none; }
+  .label {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    gap: 4px;
+    padding: 8px 10px;
+  }
+  .flapL { rotate: -155deg; }
+  .flapR { rotate: 155deg; }
+}

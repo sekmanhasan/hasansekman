@@ -1,0 +1,80 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  padding: 8px 8px 8px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--clay-l);
+  transition:
+    box-shadow 0.35s cubic-bezier(0.34, 1.4, 0.64, 1),
+    padding 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:hover {
+  box-shadow: var(--clay-l-hover);
+}
+
+.button:active {
+  box-shadow: var(--clay-l-pressed);
+  padding: 6px 10px 6px 28px;
+}
+
+.big {
+  padding: 14px 14px 14px 40px;
+}
+
+.big:active {
+  padding: 10px 20px 10px 48px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  white-space: pre;
+}
+
+.text {
+  color: var(--cream);
+  white-space: pre;
+}
+
+.light .text {
+  color: var(--dark);
+}
+
+.bigText {
+  color: var(--cream);
+  white-space: pre;
+}
+
+.blob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 999px;
+  overflow: clip;
+}
+
+.big .blob {
+  width: 80px;
+  height: 80px;
+}
+
+.arrow {
+  display: block;
+  width: 20px;
+}
+
+.big .arrow {
+  width: 36px;
+}

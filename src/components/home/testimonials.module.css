@@ -1,0 +1,126 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  padding: 100px 40px;
+  border-radius: 40px;
+  overflow: clip;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 640px;
+}
+
+.title h2 {
+  width: 100%;
+}
+
+.slides {
+  width: 100%;
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  padding-top: 56px;
+}
+
+.videoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  width: 100%;
+}
+
+.videoRow > .video,
+.nudge {
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.nudge {
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+}
+
+.player {
+  width: 100%;
+  aspect-ratio: 1.27 / 1;
+}
+
+.video h3 {
+  width: 100%;
+  text-wrap: balance;
+}
+
+.who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .wrap { padding: 0 32px; }
+  .section { padding: 120px 32px; }
+  .container { gap: 44px; }
+  .heading { flex-direction: column; gap: 20px; }
+  .title { width: 100%; }
+  .videos { gap: 32px; padding-top: 48px; }
+  .videoRow { gap: 20px; }
+  .video h3 { font-size: 18px; line-height: 1.3em; }
+}
+
+@media (max-width: 809.98px) {
+  .wrap { padding: 0; }
+  .section { padding: 72px 0; }
+  .container { gap: 40px; }
+  .heading { flex-direction: column; align-items: center; gap: 20px; padding: 0 20px; }
+  .title { width: 100%; gap: 16px; }
+  .videos { gap: 28px; padding-top: 44px; }
+  .videoRow { flex-direction: column; align-items: center; gap: 16px; padding: 0 20px 30px; overflow-x: auto; }
+  .videoRow > .video,
+  .nudge { flex: none; width: 100%; }
+  .nudge { padding-top: 24px; }
+}

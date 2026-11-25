@@ -1,0 +1,502 @@
+/* ---------- hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 32px 36px 80px;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  max-width: 1700px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: var(--bg);
+  box-shadow: var(--pressed-in);
+  color: var(--dark);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.title,
+.heading {
+  color: var(--dark);
+}
+
+.heroRow {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 1 0 0;
+  width: 1px;
+}
+
+.introText {
+  max-width: 580px;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: max-content;
+  padding: 10px 16px 12px;
+  border-radius: 16px;
+  background-color: var(--light);
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.liveLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 14px;
+}
+
+.plate {
+  --ease: cubic-bezier(0.34, 1.35, 0.64, 1);
+  position: relative;
+  flex: none;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background-color: var(--light);
+  box-shadow: var(--bead-sh);
+  transition:
+    rotate 0.7s var(--ease),
+    scale 0.7s var(--ease);
+}
+
+@media (hover: hover) {
+  .plate:hover {
+    rotate: -8deg;
+    scale: 1.1;
+  }
+}
+
+.rim {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  width: 408px;
+  height: 408px;
+  border-radius: 50%;
+  box-shadow: var(--pressed-in);
+}
+
+.cover {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  overflow: clip;
+  box-shadow: 0px 14px 24px -12px var(--sh-drop);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newBadge {
+  position: absolute;
+  top: 40px;
+  right: -8px;
+  display: flex;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: var(--yellow);
+  rotate: 8deg;
+  white-space: nowrap;
+}
+
+/* ---------- recipe ---------- */
+.recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 36px 96px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1700px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  padding: 64px 64px 72px 104px;
+  border-radius: 34px;
+  background-color: var(--white);
+  box-shadow: inset 0px 2px 1px 0px var(--sh-l), inset 0px -4px 6px 0px var(--sh-faint), 0px 26px 40px -18px var(--sh-drop);
+  overflow: clip;
+}
+
+.paper {
+  position: absolute;
+  inset: 0;
+}
+
+.pantry {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 320px;
+  z-index: 1;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--orange);
+}
+
+.chefNote {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 22px 24px 26px;
+  border-radius: 22px;
+  background-color: var(--yellow);
+  rotate: -1deg;
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1 0 0;
+  width: 1px;
+  z-index: 1;
+}
+
+.rich,
+.body {
+  width: 100%;
+  color: var(--dark);
+}
+
+.body h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 0.95em;
+  letter-spacing: -0.025em;
+}
+
+.body h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.05em;
+  letter-spacing: -0.02em;
+}
+
+.body p,
+.body li {
+  font-size: 22px;
+  line-height: 1.4em;
+  letter-spacing: -0.005em;
+}
+
+.body strong {
+  font-weight: 700;
+}
+
+.body ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.body li {
+  position: relative;
+  counter-increment: list-item;
+  padding-inline-start: 2ch;
+}
+
+.body li::before {
+  content: counter(list-item) ".";
+  position: absolute;
+  inset-inline-start: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.body > :not(:first-child) {
+  margin-top: 20px;
+}
+
+.body > h3:not(:first-child) {
+  margin-top: 40px;
+}
+
+.body > ol {
+  margin-top: 0 !important;
+}
+
+.noteWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 28px 0 12px;
+}
+
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 30px 30px 26px;
+  border-radius: 6px;
+  background-color: var(--yellow);
+  box-shadow: 0px 18px 28px -16px var(--sh-drop), 0px 2px 3px 0px var(--sh-d);
+  rotate: 1deg;
+}
+
+.tapeRow {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  height: 26px;
+  pointer-events: none;
+}
+
+.tape {
+  width: 88px;
+  height: 26px;
+  border-radius: 3px;
+  background-color: var(--light);
+  opacity: 0.85;
+  rotate: -3deg;
+}
+
+/* ---------- gallery ---------- */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 36px 72px;
+}
+
+.galleryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1700px;
+}
+
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+/* ---------- next project ---------- */
+.nextSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 24px 36px 88px;
+  background-color: var(--bg);
+  overflow: clip;
+}
+
+.nextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 1700px;
+}
+
+.cards {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nextHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  width: 1px;
+  padding-right: 40px;
+}
+
+.previous {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min-content;
+}
+
+.spacer {
+  flex: none;
+  width: 36px;
+  height: 1px;
+}
+
+.next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  width: min-content;
+}
+
+.endLink {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.endLink p {
+  flex: none;
+  white-space: nowrap;
+}
+
+.endArrow {
+  flex: none;
+  width: 48px;
+}
+
+/* ---------- tablet ---------- */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .hero { padding: 28px 28px 64px; }
+  .heroRow { flex-direction: column; gap: 40px; }
+  .intro { flex: none; width: 100%; }
+  .plate { width: 400px; height: 400px; }
+  .rim { top: 24px; left: 24px; width: 352px; height: 352px; }
+  .cover { top: 44px; left: 44px; width: 312px; height: 312px; }
+  .recipe { padding: 0 28px 76px; }
+  .card { flex-direction: column; gap: 40px; padding: 48px 40px 56px 96px; }
+  .pantry,
+  .method { flex: none; width: 100%; }
+  .gallery { padding: 0 28px 88px; }
+  .nextSection { padding: 24px 28px 72px; }
+  .nextContainer { max-width: none; }
+  .cards { flex-wrap: wrap; gap: 32px 36px; justify-content: center; }
+  .nextHeading { flex: none; width: 100%; }
+  .spacer { display: none; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .hero { padding: 20px 20px 48px; }
+  .heroContainer { align-items: center; gap: 20px; }
+  .titleWrapper { align-items: center; gap: 14px; }
+  .title { text-align: center; }
+  .heroRow { flex-direction: column; gap: 32px; }
+  .intro { flex: none; align-items: center; gap: 22px; width: 100%; }
+  .introText { text-align: center; }
+  .facts,
+  .liveLink { justify-content: center; }
+  .plate { width: 300px; height: 300px; }
+  .rim { top: 18px; left: 18px; width: 264px; height: 264px; }
+  .cover { top: 34px; left: 34px; width: 232px; height: 232px; }
+  .newBadge { top: 12px; right: 0; }
+  .recipe { padding: 0 20px 64px; }
+  .card { flex-direction: column; gap: 32px; padding: 36px 22px 44px 52px; border-radius: 28px; }
+  .pantry,
+  .method { flex: none; width: 100%; }
+  .gallery { padding: 0 20px 72px; }
+  .headingWrapper { align-items: center; gap: 16px; }
+  .headingWrapper .heading { text-align: center; }
+  .nextSection { padding: 56px 20px; }
+  .nextContainer { max-width: none; }
+  .cards { flex-direction: column; gap: 48px; justify-content: flex-start; }
+  .nextHeading { flex: none; align-items: center; width: 100%; order: 0; padding-right: 40px; }
+  .nextHeading .heading { text-align: center; }
+  .previous { align-items: center; width: 100%; order: 1; }
+  .next { align-items: center; width: 100%; order: 5; }
+  .spacer { display: none; }
+  .endArrow { width: 32px; }
+}

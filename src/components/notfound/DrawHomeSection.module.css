@@ -1,0 +1,66 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  padding: 150px 40px 40px;
+  overflow: clip;
+}
+
+.game {
+  position: absolute;
+  inset: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  width: 100%;
+  max-width: 1700px;
+  pointer-events: none;
+  color: var(--dark);
+}
+
+.title {
+  width: 100%;
+  max-width: 820px;
+  text-wrap: wrap;
+}
+
+.text {
+  width: 100%;
+  max-width: 520px;
+  text-wrap: balance;
+}
+
+.button {
+  pointer-events: auto;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .section {
+    padding: 130px 32px 32px;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .section {
+    min-height: 600px;
+    padding: 110px 20px 24px;
+  }
+  .container {
+    align-items: center;
+    gap: 16px;
+  }
+  .title,
+  .text {
+    text-align: center;
+  }
+}

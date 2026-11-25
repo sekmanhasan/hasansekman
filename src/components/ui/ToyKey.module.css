@@ -1,0 +1,122 @@
+.key {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  width: 200px;
+  height: 134px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.cap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 20px;
+  border-radius: 30px;
+  --sh-cast: 10px 26px 46px -18px;
+  --sh-last: 3px 6px 12px -4px;
+  box-shadow:
+    inset 2px 3px 1px 0px var(--clay-rim),
+    inset 10px 22px 30px -14px var(--clay-glow),
+    inset -10px -16px 24px -8px var(--clay-shade),
+    var(--sh-cast) var(--clay-cast),
+    var(--sh-last) var(--sh-d);
+  transition:
+    top 0.35s cubic-bezier(0.34, 1.5, 0.64, 1),
+    bottom 0.35s cubic-bezier(0.34, 1.5, 0.64, 1),
+    left 0.35s cubic-bezier(0.34, 1.5, 0.64, 1),
+    right 0.35s cubic-bezier(0.34, 1.5, 0.64, 1),
+    box-shadow 0.35s cubic-bezier(0.34, 1.5, 0.64, 1);
+}
+
+.big:hover .cap {
+  top: 3px;
+  bottom: 4px;
+  --sh-cast: 7px 18px 32px -16px;
+  --sh-last: 2px 4px 9px -3px;
+}
+
+.big:active .cap {
+  top: 7px;
+  bottom: 0;
+  left: -3px;
+  right: -3px;
+  box-shadow:
+    inset 1px 2px 1px 0px var(--clay-rim),
+    inset 4px 9px 12px -5px var(--clay-glow),
+    inset -4px -7px 10px -4px var(--clay-shade),
+    3px 8px 14px -6px var(--clay-cast),
+    1px 2px 4px -2px var(--sh-d);
+}
+
+.small {
+  width: 96px;
+  height: 96px;
+}
+
+.small .cap {
+  bottom: 5px;
+  padding: 14px 16px;
+  border-radius: 26px;
+  box-shadow:
+    inset 1px 2px 1px 0px var(--clay-rim),
+    inset 4px 9px 12px -5px var(--clay-glow),
+    inset -4px -7px 10px -4px var(--clay-shade),
+    var(--sh-cast) var(--clay-cast),
+    var(--sh-last) var(--sh-d);
+  --sh-cast: 5px 12px 20px -7px;
+  --sh-last: 1px 3px 5px -2px;
+}
+
+.small:hover .cap {
+  top: 2px;
+  bottom: 3px;
+  --sh-cast: 4px 9px 16px -7px;
+  --sh-last: 1px 2px 4px -2px;
+}
+
+.small:active .cap {
+  top: 5px;
+  bottom: 0;
+  left: -2px;
+  right: -2px;
+  --sh-cast: 2px 5px 9px -4px;
+  --sh-last: 1px 1px 3px -1px;
+}
+
+.key:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+  border-radius: 30px;
+}
+
+.legend {
+  color: var(--dark);
+  white-space: pre;
+}
+
+.spacer {
+  flex: 1 0 0;
+  width: 100%;
+}
+
+.label {
+  color: var(--dark);
+  white-space: pre;
+}
+
+.icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+}
